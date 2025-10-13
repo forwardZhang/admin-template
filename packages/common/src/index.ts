@@ -1,6 +1,4 @@
-function add(a: number, b: number) {
+function addHandle(a: number, b: number) {
   console.log(a + b);
 }
-export default {
-  add
-};
+export { addHandle };

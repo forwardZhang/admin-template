@@ -64,13 +64,20 @@ importers:
         specifier: ^3.1.0
         version: 3.1.1(typescript@5.9.3)
 
-  apps/adp: {}
+  apps/adp:
+    dependencies:
+      '@admin/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      '@admin/panda':
+        specifier: workspace:*
+        version: link:../../packages/panda
 
   apps/passport: {}
 
-  packages/panda: {}
+  packages/common: {}
 
-  packages/utils: {}
+  packages/panda: {}
 
 packages:
 

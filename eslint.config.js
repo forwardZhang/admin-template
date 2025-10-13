@@ -14,51 +14,7 @@ import eslintPluginPrettier from "eslint-plugin-prettier";
 import eslintPluginVue from "eslint-plugin-vue";
 import globals from "globals";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
-
-const ignores = [
-  "**/node_modules",
-  "**/dist",
-  "**/dist-*",
-  "**/*-dist",
-  "**/.husky",
-  "**/.nitro",
-  "**/.output",
-  "**/Dockerfile",
-  "**/package-lock.json",
-  "**/yarn.lock",
-  "**/pnpm-lock.yaml",
-  "**/bun.lockb",
-  "**/output",
-  "**/coverage",
-  "**/temp",
-  "**/.temp",
-  "**/tmp",
-  "**/.tmp",
-  "**/.history",
-  "**/.turbo",
-  "**/.nuxt",
-  "**/.next",
-  "**/.vercel",
-  "**/.changeset",
-  "**/.idea",
-  "**/.cache",
-  "**/.output",
-  "**/.vite-inspect",
-
-  "**/CHANGELOG*.md",
-  "**/*.min.*",
-  "**/LICENSE*",
-  "**/__snapshots__",
-  "**/*.snap",
-  "**/fixtures/**",
-  "**/.vitepress/cache/**",
-  "**/auto-import?(s).d.ts",
-  "**/components.d.ts",
-  "**/vite.config.mts.*",
-  "**/*.sh",
-  "**/*.ttf",
-  "**/*.woff"
-];
+import ignores from "./eslint.ignores.js";
 
 export default defineConfig(
   {
@@ -73,7 +29,10 @@ export default defineConfig(
       parser: tseslint.parser //  解析器
     },
     rules: {
-      "no-var": "error"
+      "no-var": "error",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "vue/multi-word-component-names": "off",
+      "prefer-const": "error"
     }
   },
   {
