@@ -28,12 +28,7 @@ export default defineConfig(
       sourceType: "module", // 模块化类型
       parser: tseslint.parser //  解析器
     },
-    rules: {
-      "no-var": "error",
-      "@typescript-eslint/no-unused-vars": "warn",
-      "vue/multi-word-component-names": "off",
-      "prefer-const": "error"
-    }
+    rules: {}
   },
   {
     ignores,
@@ -43,6 +38,12 @@ export default defineConfig(
       globals: {
         ...globals.browser
       }
+    },
+    rules: {
+      "no-var": "error",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "prefer-const": "error",
+      "vue/multi-word-component-names": "off"
     }
   }
 );

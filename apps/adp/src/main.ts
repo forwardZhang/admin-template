@@ -1,4 +1,7 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import "./styles/index.scss";
+import { bootstrap } from "./bootstrap";
+async function initApplication() {
+  await bootstrap();
+}
 
-createApp(App).mount("#app");
+initApplication();
