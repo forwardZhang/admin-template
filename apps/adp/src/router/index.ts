@@ -1,11 +1,13 @@
-import { createRouter, createWebHistory } from "vue-router";
+import type { App } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
-import HomeView from "@/views/home/index.vue";
-const routes = [{ path: "/", alias: "/home", component: HomeView }];
+import { ignoreAccessRoutes, notFoundRoute, rootRoute } from './constants';
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-});
+export function setupRouter(app: App) {
+  const router = createRouter({
+    history: createWebHistory(),
+    routes: [rootRoute, ...ignoreAccessRoutes, notFoundRoute],
+  });
 
-export default router;
+  app.use(router);
+}

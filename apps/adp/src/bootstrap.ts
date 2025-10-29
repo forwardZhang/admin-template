@@ -1,14 +1,16 @@
-import { createApp } from "vue";
-import App from "@/App.vue";
-import router from "@/router";
-import { createPinia } from "pinia";
-import { setupAntdComponent } from "@/adapter/antd-component";
+import { createPinia } from 'pinia';
+import { createApp } from 'vue';
+
+import { setupNaiveComponent } from '@/adapter/naive-component';
+import App from '@/App.vue';
+import { setupRouter } from '@/router';
+
 async function bootstrap() {
   const app = createApp(App);
-  app.use(router);
+  setupNaiveComponent(app);
+  setupRouter(app);
   app.use(createPinia());
-  setupAntdComponent(app);
-  app.mount("#app");
+  app.mount('#app');
 }
 
 export { bootstrap };
