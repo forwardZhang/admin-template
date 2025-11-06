@@ -11,7 +11,7 @@
       </div>
       <div class="layout-sidebar">
         <div class="layout-sidebar-content">
-          <n-scrollbar>
+          <n-scrollbar class="layout-sidebar-scroll">
             <ProMenu
               v-bind="layout.verticalMenuProps"
               :indent="18"
@@ -31,7 +31,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { useAppSettingStore } from '@/store/app-setting';
+import { useAppStore } from '@/store/app';
 import Logo from './components/logo/index.vue';
 import ProMenu from './components/menu/index.vue';
 import { useLayoutMenu } from './hooks/use-layout-menu';
@@ -40,7 +40,7 @@ import testMenus from './test-menus';
 const collapsed = ref(false);
 const router = useRouter();
 const route = useRoute();
-const appSettingStore = useAppSettingStore();
+const appSettingStore = useAppStore();
 const {
   layout,
   // fullKeys,
@@ -50,6 +50,7 @@ const {
   mode: computed(() => appSettingStore.layoutSetting.mode),
   menus: computed(() => testMenus),
 });
+console.log('layout', layout.value);
 
 const finalSidebarCollapsedWidth = 80;
 const sidebarCollapsedShowMenuTitle = true;
@@ -101,6 +102,9 @@ $layoutColor: var(--card-color);
       display: flex;
       flex-direction: column;
       height: 100%;
+      :deep(>.layout-sidebar-scroll){
+        flex:1 0 0;
+      }
     }
   }
 }
