@@ -1,3 +1,4 @@
 packages:
-  - 'packages/*'  # 包含 packages 目录下的所有子包（如 panda、common）
-  - 'apps/*'      # 包含 apps 目录下的所有应用（如 adp）
+  - packages/*
+  - apps/*
+

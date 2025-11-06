@@ -15,7 +15,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.15.0",
   "dependencies": {
-    "@admin/common": "workspace:*",
-    "@admin/panda": "workspace:*"
+    "@admin/core": "workspace:*",
+    "@admin/utils": "workspace:*"
   }
 }
