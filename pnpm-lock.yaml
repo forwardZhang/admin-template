@@ -81,7 +81,11 @@ importers:
 
   apps/passport: {}
 
-  packages/@core: {}
+  packages/@core:
+    dependencies:
+      '@admin/utils':
+        specifier: workspace:*
+        version: link:../utils
 
   packages/utils: {}
 

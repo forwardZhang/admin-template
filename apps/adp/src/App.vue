@@ -19,8 +19,9 @@
 
 <script setup lang="ts">
 import type { GlobalThemeOverrides } from 'naive-ui';
+import { setElementProperties } from '@admin/utils';
 import { dateZhCN, lightTheme, NConfigProvider, NEl, NMessageProvider, NNotificationProvider, zhCN } from 'naive-ui';
-import { computed } from 'vue';
+import { computed, onMounted, useTemplateRef } from 'vue';
 import { RouterView } from 'vue-router';
 import { useAppStore } from '@/store/app';
 

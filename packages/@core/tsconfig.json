@@ -4,18 +4,16 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "baseUrl": ".",
-    "types": ["vite/client"],
     "paths": {
       "@/*": ["src/*"],
+      "@utils/*": ["../utils/src/*"]
     }
   },
   "include": [
     "src/**/*",
-    "../../packages/@core/src/**/*",
-    "../../packages/utils/src/**/*"
+    "../utils/src/**/*"
   ],
   "references": [
-    { "path": "../../packages/utils" },
-    { "path": "../../packages/@core" }
+    { "path": "../utils" }
   ]
 }
